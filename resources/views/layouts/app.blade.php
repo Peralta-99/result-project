@@ -7,10 +7,23 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SocialHub') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="module">
+        @if (Session :: has ('success'))
+        new Noty({
+            layout: 'topCenter',
+            text: '{{ Session::get('success') }}',
+            timeout: 1300,
+            theme: 'sunset',
+            type: 'info'
+        }).show();
+        @endif
+    </script>
+
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,7 +46,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @if(Auth::check())
+                            <li><a class="navbar-brand" href="{{route('profile', ['slug' => Auth::user()->slug])}}">My profile</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
