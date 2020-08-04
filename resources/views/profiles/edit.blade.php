@@ -1,5 +1,13 @@
 @extends('layouts.app')
-
+<script type="text/javascript">
+    function limitText(limitField, limitCount, limitNum) {
+        if (limitField.value.length > limitNum) {
+            limitField.value = limitField.value.substring(0, limitNum);
+        } else {
+            limitCount.value = limitNum - limitField.value.length;
+        }
+    }
+</script>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -26,7 +34,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="about">About me</label>
-                                <textarea required id="about" name="about" cols="40" rows="13" class="form-control">{{ $info->about }}</textarea>
+                                <textarea class="form-control" name="about" cols="40" rows="13" required id="about" onKeyDown="limitText(this.form.about,this.form.countdown,255);" onKeyUp="limitText(this.form.about,this.form.countdown,255);">{{ __($info->about) }}</textarea>
+                                <p style="font-size: 1em; cursor: default">
+                                    (Maximum characters: 255)
+                                    <br>
+                                    You have <input readonly type="text" style="cursor: default" name="countdown" size="2" value="255"> characters left.
+                                </p>
                             </div>
                             <div class="form-group">
                                 <p class="text-center">
