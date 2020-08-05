@@ -28,14 +28,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
+window.Pusher = require('pusher-js');
+import Echo from 'laravel-echo';
 
-// import Echo from 'laravel-echo';
 
-// window.Pusher = require('pusher-js');
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '113ebeef7d6efadc9d22',
+    forceTLS: true,
+    authEndpoint: '/broadcasting/auth',
+    cluster: 'eu',
+    encrypted: true
+});
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
+
+Pusher.log = function (message) {
+    window.console.log(message);
+};

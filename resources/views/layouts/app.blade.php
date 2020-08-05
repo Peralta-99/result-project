@@ -16,9 +16,9 @@
         new Noty({
             layout: 'topCenter',
             text: '{{ Session::get('success') }}',
-            timeout: 1300,
+            timeout: 2000,
             theme: 'sunset',
-            type: 'info'
+            type: 'success'
         }).show();
         @endif
     </script>
@@ -87,8 +87,16 @@
             </div>
         </nav>
 
+
+
         <main class="py-4">
             @yield('content')
+            <notification :id="{{Auth::id()}}"></notification>
+            <audio id="noty_audio">
+                <source src="{{asset('audio/done-for-you.mp3')}}">
+                <source src="{{asset('audio/done-for-you.wav')}}">
+                <source src="{{asset('audio/done-for-you.ogg')}}">
+            </audio>
         </main>
     </div>
 </body>

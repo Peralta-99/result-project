@@ -10,6 +10,9 @@ docker-build:
 test:
 	@sudo docker exec site_php-cli_1 vendor/bin/phpunit --colors=always
 
+work:
+	@php artisan queue:work
+
 perm:
 	sudo chown ${USER}:${USER} bootstrap/cache -R
 	sudo chown ${USER}:${USER} storage -R
