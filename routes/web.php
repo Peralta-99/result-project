@@ -69,6 +69,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/create/post', [
         'uses' => 'PostsController@store'
     ]);
+
+    Route::get('/get_auth_user_data', function () {
+        return Auth::user();
+    });
+
+    Route::get('/like/{id}', [
+        'uses' => 'LikesController@like'
+    ]);
+
+    Route::get('/unlike/{id}', [
+        'uses' => 'LikesController@unlike'
+    ]);
 });
 
 

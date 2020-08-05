@@ -13,6 +13,9 @@
                         <p class="text-center">
                             {{ post.content }}
                         </p>
+
+                        <like :id="post.id"></like>
+
                     </div>
                 </div>
             </div>
@@ -22,7 +25,9 @@
 </template>
 
 <script>
+    import Like from "./Like";
     export default {
+        components: {Like},
         mounted() {
             this.get_feed()
         },
