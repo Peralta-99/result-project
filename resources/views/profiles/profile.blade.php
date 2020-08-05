@@ -8,7 +8,7 @@
                 <div class="card-header"><h5 class="text-center">{{$user->name}}</h5></div>
                 <div class="card-body">
                     <center>
-                    <img src="{{Storage::url($user->avatar)}}" width="175px" height="263px" style="border-radius: 15px" alt="">
+                    <img src="{{$user->avatar}}" width="175px" height="263px" style="border-radius: 15px" alt="">
                     </center>
                 </div>
 

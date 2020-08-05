@@ -19,7 +19,12 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+import {store} from './store';
+
+Vue.component('post', require('./components/Post.vue').default);
+Vue.component('feed', require('./components/Feed.vue').default);
 Vue.component('friend', require('./components/Friend.vue').default);
+Vue.component('unread', require('./components/UnreadNots.vue').default);
 Vue.component('notification', require('./components/Notification.vue').default);
 
 /**
@@ -28,6 +33,9 @@ Vue.component('notification', require('./components/Notification.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
 const app = new Vue({
     el: '#app',
+    store
 });

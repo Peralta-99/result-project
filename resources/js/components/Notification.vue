@@ -20,6 +20,7 @@
                             theme: 'sunset',
                             type: 'success'
                         }).show()
+                        this.$store.commit('add_not', notification);
                         document.getElementById("noty_audio").play();
                     })
             }
