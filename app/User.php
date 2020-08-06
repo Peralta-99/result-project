@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Traits\Friendable;
+use Laravel\Scout\Searchable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Storage;
 class User extends Authenticatable
 {
     use Notifiable;
+
+    use Searchable;
 
     use Friendable;
 

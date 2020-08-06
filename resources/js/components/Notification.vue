@@ -16,7 +16,7 @@
                     .notification((notification) => {
                         new Noty({
                             layout: 'topCenter',
-                            text: notification.message,
+                            text: notification.name + notification.message,
                             theme: 'sunset',
                             type: 'success'
                         }).show()

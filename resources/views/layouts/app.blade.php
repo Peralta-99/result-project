@@ -34,7 +34,9 @@
 </head>
 <body>
     <div id="app">
+        @if(Auth::check())
         <init></init>
+        @endif
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -92,6 +94,9 @@
 
 
         <main class="py-4">
+            @if(Auth::check())
+                <search></search>
+            @endif
             @yield('content')
             @if(Auth::check())
                 <notification :id="{{Auth::id()}}"></notification>

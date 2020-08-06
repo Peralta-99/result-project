@@ -41,7 +41,7 @@ window.Echo = new Echo({
     encrypted: true
 });
 
-
-Pusher.log = function (message) {
-    window.console.log(message);
-};
+//
+// Pusher.log = function (message) {
+//     window.console.log(message);
+// };

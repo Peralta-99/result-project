@@ -22,6 +22,7 @@ window.Vue = require('vue');
 import {store} from './store';
 
 Vue.component('post', require('./components/Post.vue').default);
+Vue.component('search', require('./components/Search.vue').default);
 Vue.component('init', require('./components/Init.vue').default);
 Vue.component('feed', require('./components/Feed.vue').default);
 Vue.component('friend', require('./components/Friend.vue').default);

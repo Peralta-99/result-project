@@ -16,7 +16,7 @@
                         <ul class="list-group">
                             @foreach($nots as $not)
                                 <li class="list-group-item">
-                                    {{$not->data['message']}}<span class="float-right">{{$not->created_at->diffForHumans()}}</span>
+                                    {{$not->data['name']}}{{$not->data['message']}}<span class="float-right">{{$not->created_at->diffForHumans()}}</span>
                                 </li>
                             @endforeach
                         </ul>

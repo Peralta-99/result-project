@@ -33,7 +33,6 @@
                     .post('/create/post', { content: this.content })
                     .then((response) => {
                         this.content = '';
-                        console.log(response);
                         new Noty({
                             layout: 'topCenter',
                             text: 'Your post has been published!',

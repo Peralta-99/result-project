@@ -57,7 +57,6 @@
                     .get('/accept_friend/' + this.profile_user_id)
                     .then((response) => {
                         if (response.data === 1) {
-                            console.log('hi');
                             this.status = 'friends';
                             new Noty({
                                 layout: 'topCenter',
