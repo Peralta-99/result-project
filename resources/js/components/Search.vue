@@ -18,8 +18,8 @@
 </template>
 
 <script>
-    import algoliasearch from 'algoliasearch';
-    const client = algoliasearch('RDUTABSQWX', '455b2c12969bd3db8c7769e7b81761cc');
+    import algoliasearch from 'algoliasearch/lite';
+    const client = algoliasearch('RDUTABSQWX', '0b4c57b9f85f848b0141bd61b3c32b8b');
     const index = client.initIndex('users');
     export default {
         mounted() {

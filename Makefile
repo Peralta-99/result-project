@@ -13,6 +13,12 @@ test:
 work:
 	@php artisan queue:work
 
+access:
+	@sudo php artisan route:clear
+    @sudo php artisan config:clear
+    @sudo php artisan cache:clear
+
+
 perm:
 	sudo chown ${USER}:${USER} bootstrap/cache -R
 	sudo chown ${USER}:${USER} storage -R
