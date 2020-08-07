@@ -34,8 +34,9 @@ class ProfilesController extends Controller
         ]);
 
         if ($request->hasFile('avatar')) {
+            $path = $request->file('avatar')->storePublicly('avatars', 's3');
             Auth::user()->update([
-               'avatar' => $request->avatar->store('public/avatars')
+               'avatar' => $path
             ]);
         }
 

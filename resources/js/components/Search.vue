@@ -35,6 +35,11 @@
             search() {
                 index.search(this.query).then(({ hits }) => {
                     this.results = hits;
+                    for (let i = 0;i < this.results.length;i ++) {
+                        if(!(((this.results[i]).avatar).includes("defaults"))) {
+                        (this.results[i]).avatar = 'https://avatars2020.s3.amazonaws.com/' + (((this.results[i]).avatar).slice(31));
+                        }
+                    }
                 })
                 .catch((error) => console.log(error));
             }

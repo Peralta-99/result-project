@@ -57,12 +57,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
+            'key' => 'AKIAIWGKFWLSNJW2NSHQ',
+            'secret' => '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',
+            'region' => 'us-east-1',
+            'bucket' => 'avatars2020',
         ],
 
     ],

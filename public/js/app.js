@@ -2335,6 +2335,12 @@ var index = client.initIndex('users');
       index.search(this.query).then(function (_ref) {
         var hits = _ref.hits;
         _this.results = hits;
+
+        for (var i = 0; i < _this.results.length; i++) {
+          if (!_this.results[i].avatar.includes("defaults")) {
+            _this.results[i].avatar = 'https://avatars2020.s3.amazonaws.com/' + _this.results[i].avatar.slice(31);
+          }
+        }
       })["catch"](function (error) {
         return console.log(error);
       });
